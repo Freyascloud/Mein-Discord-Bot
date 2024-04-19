@@ -3,6 +3,7 @@ import os
 import asyncio
 from discord import app_commands
 from discord.ext import commands
+import config
 
 
 #intents = discord.Intents.all()
@@ -20,6 +21,7 @@ async def on_ready():
         print(f"Synced {len(synced)} command(s)")
     except Exception as e:
         print(e)
+    print('_________________________________________________________')
 
 async def status_task():
     while True:
@@ -43,4 +45,4 @@ async def say(interaction: discord.Interaction, args: str):
 
 
 
-bot.run('MTIzMDQ4NDY3OTM2NzQ2MjkzMw.G3uG55.cVzV5MZbPr0S8IjIX_QdzrNTtNObeilyZ2O0w4')
+bot.run(config.TOKEN)
